@@ -1,11 +1,13 @@
 ﻿@page
-@model AbbyWeb.Pages.Categories.CreateModel
+@model AbbyWeb.Pages.Categories.EditModel
 
 <form method="post">
+	@*Recebendo o id do objeto a ser editado pela idex page*@
+	<input hidden asp-for="Category.Id" />
 	@*mt = margin top*@
 	<div classs="border p-3 mt-4">
 		<div class="row pb-2">
-			<h2 class="text-primary pl-3">Create Category</h2>
+			<h2 class="text-primary pl-3">Edit Category</h2>
 			<hr />
 		</div>
 		<div asp-validation-summary="All"></div>
@@ -19,11 +21,7 @@
 			<input asp-for="@Model.Category.DisplayOrder" class="form-control" />
 			<span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
 		</div>
-		<button type="submit" class="btn btn-primary" style="width:150px;">Create</button>
-		<a asp-page="Index" class="btn btn-danger mx-2">
-			Back
-		</a>
-
+		<button type="submit" class="btn btn-primary" style="width:150px;">Edit</button>
 	</div>
 </form>
 
